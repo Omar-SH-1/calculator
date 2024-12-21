@@ -28,8 +28,10 @@ while (true) {
         std::string expression;
         std::cout << "Enter an expression: ";
         std::getline(std::cin, expression);
-
-        if (!isValidExpression(expression)) throw "Error: Invalid input!";
+        if (expression[0] == '-') {
+            expression =  "0" + expression;
+        }
+        if (!isValidExpression(expression)) throw "В академ захотел?";
 
         std::vector<double> numbers;
         std::vector<char> operators;
