@@ -3,17 +3,17 @@
 #include "calculator.h"
 
 int main() {
+    std::string input;
     while (true) {
-        try {
-            std::string expression;
-            std::cout << "Enter an expression: ";
-            std::getline(std::cin, expression);
+        std::cout << "Введите выражение: ";
+        std::getline(std::cin, input);
 
-            double result = evaluateExpression(expression);
-            std::cout << "Final result: " << result << std::endl;
-            break;
-        } catch (const std::exception& err) {
-            std::cout << err.what() << "\nPlease enter a new expression.\n";
+        try {
+            double result = evaluateExpression(input);
+            std::cout << "Результат: " << result << "\n";
+        } catch (const std::exception& e) {
+
+            std::cout << "Попробуй заново (ЭТО КАЛЬКУЛЯТОР).\n";
         }
     }
     return 0;
